@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaShieldDog } from 'react-icons/fa6';
 import { NavLink } from 'react-router';
 
 const Navbar = () => {
@@ -22,7 +23,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">WARM PAWS</a>
+                <a className="btn btn-ghost text-xl font-mono"><FaShieldDog /> WARM PAWS</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

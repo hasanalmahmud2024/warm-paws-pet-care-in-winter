@@ -5,8 +5,8 @@ import Services from "../pages/Services/Services";
 import Profile from "../pages/Profile/Profile";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import Error from "../components/Error/Error";
-import Login from "../components/Login/Login";
-import Register from "../components/Register/Register";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 
 
 const router = createBrowserRouter([
@@ -17,18 +17,19 @@ const router = createBrowserRouter([
             {
                 index: true,
                 Component: Home,
+                loader: () => fetch("/services.json"),
             },
             {
                 path: '/services',
                 Component: Services,
             },
             {
-                path: '/profile',
-                element: <Profile></Profile>,
+                path: '/services/:id',
+                Component: ServiceDetails,
             },
             {
-                path: '/service-details',
-                Component: ServiceDetails,
+                path: '/profile',
+                element: <Profile></Profile>,
             },
             {
                 path: '/login',
