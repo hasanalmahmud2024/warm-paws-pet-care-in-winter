@@ -18,7 +18,7 @@ const ServiceDetails = () => {
                 <div className="hero-content flex-col mx-4 md:mx-16 lg:mx-[145px]">
                     <img
                         src={image}
-                        className="w-lg lg:w-xl rounded-lg shadow-2xl my-8"
+                        className="max-w-lg  max-h-96 object-cover rounded-lg shadow-2xl my-8"
                     />
                     <div className='space-y-2'>
                         <h1 className="text-5xl font-bold">{serviceName}</h1>
