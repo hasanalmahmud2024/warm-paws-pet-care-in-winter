@@ -7,7 +7,6 @@ import WinterCareTips from '../../components/WinterTips/WinterTips';
 
 const Home = () => {
     const services = useLoaderData();
-    console.log(services);
 
 
     return (
