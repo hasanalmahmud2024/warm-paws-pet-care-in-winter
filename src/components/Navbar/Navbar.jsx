@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { use } from 'react';
 import { FaShieldDog } from 'react-icons/fa6';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../../context/AuthContext/AuthContext';
 
 const Navbar = () => {
+    const { user, signOutUser } = use(AuthContext);
+
+    const handleSignOut = () => {
+        signOutUser()
+            .then(() => {
+                console.log('Signed out');
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
+
     const links = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
         <li><NavLink to={'/services'}>Services</NavLink></li>
         <li><NavLink to={'/profile'}>My Profile</NavLink></li>
-        
     </>
 
     return (
@@ -31,8 +43,10 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <NavLink className='btn' to={'/login'}>Login</NavLink>
-                <NavLink className='btn' to={'/register'}>Register</NavLink>
+                {
+                    user ? <button onClick={handleSignOut} className="btn">Log Out</button>
+                        : <Link className='btn' to={'/login'}>Log In</Link>
+                }
             </div>
         </div>
     );

@@ -14,14 +14,14 @@ const ServiceDetails = () => {
 
     return (
         <div>
-            <div className="hero bg-base-200 min-h-screen mb-16 ">
+            <div className="hero bg-base-200 min-h-screen pb-16 ">
                 <div className="hero-content flex-col mx-4 md:mx-16 lg:mx-[145px]">
                     <img
                         src={image}
-                        className="max-w-lg  max-h-96 object-cover rounded-lg shadow-2xl my-8"
+                        className="max-w-[80vw] md:max-w-lg max-h-96 object-cover rounded-lg shadow-2xl my-8"
                     />
                     <div className='space-y-2'>
-                        <h1 className="text-5xl font-bold">{serviceName}</h1>
+                        <h1 className="text-4xl font-bold">{serviceName}</h1>
                         <p className="py-6">{description}</p>
                         <div className="badge badge-outline badge-warning">{category}</div>
                         <div className="text-primary font-semibold flex items-center gap-1">

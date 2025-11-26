@@ -1,9 +1,11 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../context/AuthContext/AuthContext';
 import toast, { Toaster } from 'react-hot-toast';
+import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 
 const Login = () => {
+    const [showPassword, setShowPassword] = useState(false)
     const { signInUser, signInWithGoogle, } = use(AuthContext);
 
     const location = useLocation();
@@ -16,21 +18,21 @@ const Login = () => {
         console.log(email, password);
 
         signInUser(email, password)
-        .then(result=>{
-            console.log(result.user);
-            event.target.reset();
-            toast.success('Login successful');
-            setTimeout(() => {
-                navigate(location?.state || '/');
-            }, 1000);
-        })
-        .catch((error=>{
-            console.log(error)
-            toast.error(error.message)
-        }))
+            .then(result => {
+                console.log(result.user);
+                event.target.reset();
+                toast.success('Login successful');
+                setTimeout(() => {
+                    navigate(location?.state || '/');
+                }, 1000);
+            })
+            .catch((error => {
+                console.log(error)
+                toast.error(error.message)
+            }))
     }
 
-    const handleGoogleSignIn = ()=>{
+    const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
                 console.log(result.user);
@@ -41,8 +43,13 @@ const Login = () => {
             }))
     }
 
+    const handleShowPassword = (event) => {
+        event.preventDefault();
+        setShowPassword(!showPassword);
+    }
+
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero bg-base-200 pt-10">
             <div className="hero-content flex-col ">
                 <div className="text-center lg:text-left mb-2">
                     <h1 className="text-5xl font-bold">Login now!</h1>
@@ -56,8 +63,13 @@ const Login = () => {
                                 <input name='email' type="email" className="input" placeholder="Email" />
                                 {/* password */}
                                 <label className="label">Password</label>
-                                <div>
-                                <input name='password' type="password" className="input" placeholder="Password" />
+                                <div className='relative'>
+                                    <button onClick={handleShowPassword} className="btn btn-xs absolute top-2 right-5 z-1">
+                                        {
+                                            showPassword ? <IoMdEyeOff></IoMdEyeOff> : <IoMdEye></IoMdEye>
+                                        }
+                                    </button>
+                                        <input name='password' type={showPassword ? 'text' : "password"} className="input pr-10" placeholder="Password" required />
                                 </div>
                                 <div><a className="link link-hover">Forgot password?</a></div>
 

@@ -30,6 +30,8 @@ const Register = () => {
                 setTimeout(() => {
                     navigate(location?.state || '/');
                 }, 1000);
+
+
             })
             .catch((error => {
                 console.log(error)
@@ -43,7 +45,7 @@ const Register = () => {
     }
 
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero bg-base-200 pt-10">
             <div className="hero-content flex-col ">
                 <div className="text-center lg:text-left mb-2">
                     <h1 className="text-5xl font-bold">Register Your Account!</h1>
@@ -54,10 +56,10 @@ const Register = () => {
                             <fieldset className="fieldset">
                                 {/* name */}
                                 <label className="label">Your Name</label>
-                                <input name='name' type="text" className="input" placeholder="Your Name" />
+                                <input name='name' type="text" className="input" required placeholder="Your Name" />
                                 {/* email */}
                                 <label className="label">Email</label>
-                                <input name='email' type="email" className="input" placeholder="Email" />
+                                <input name='email' type="email" className="input" placeholder="Email" required/>
                                 {/* photoURL */}
                                 <label className="label">Your Photo </label>
                                 <input name='photoURL' type="text" className="input" placeholder="PhotoURL" />
@@ -69,7 +71,7 @@ const Register = () => {
                                             showPassword ? <IoMdEyeOff></IoMdEyeOff> : <IoMdEye></IoMdEye>
                                         }
                                     </button>
-                                    <input name='password' type={showPassword ? 'text' : "password"} className="input pr-10" placeholder="Password" />
+                                    <input name='password' type={showPassword ? 'text' : "password"} className="input pr-10" placeholder="Password" required/>
                                 </div>
                                 <button className="btn btn-neutral mt-4">Register</button>
                                 {/* Google */}

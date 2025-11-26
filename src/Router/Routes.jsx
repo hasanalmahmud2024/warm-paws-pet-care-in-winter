@@ -7,6 +7,7 @@ import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import Error from "../components/Error/Error";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -26,12 +27,16 @@ const router = createBrowserRouter([
             },
             {
                 path: '/services/:id',
-                Component: ServiceDetails,
+                element: <PrivateRoute>
+                    <ServiceDetails></ServiceDetails>
+                </PrivateRoute>,
                 loader: () => fetch("/services.json"),
             },
             {
                 path: '/profile',
-                element: <Profile></Profile>,
+                element: <PrivateRoute>
+                    <Profile></Profile>
+                </PrivateRoute>,
             },
             {
                 path: '/login',
