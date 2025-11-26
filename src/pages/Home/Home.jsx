@@ -11,6 +11,7 @@ const Home = () => {
 
     return (
         <div className=''>
+            <title>WARM PAWS | Home</title>
             <div className='mt-5 mb-18'>
                 <Slider></Slider>
             </div>

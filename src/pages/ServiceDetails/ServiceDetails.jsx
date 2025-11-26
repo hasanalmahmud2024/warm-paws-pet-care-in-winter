@@ -14,6 +14,7 @@ const ServiceDetails = () => {
 
     return (
         <div>
+            <title>WARM PAWS | {serviceName}</title>
             <div className="hero bg-base-200 min-h-screen pb-16 ">
                 <div className="hero-content flex-col mx-4 md:mx-16 lg:mx-[145px]">
                     <img

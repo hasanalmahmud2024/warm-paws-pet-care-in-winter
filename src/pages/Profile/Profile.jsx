@@ -31,6 +31,7 @@ const Profile = () => {
 
     return (
         <div className="hero bg-base-200 min-h-screen ">
+            <title>WARM PAWS | My Profile</title>
             <div className="hero-content flex-col text-center ">
                 <div className="avatar">
                     <div className="w-36 rounded-full">
