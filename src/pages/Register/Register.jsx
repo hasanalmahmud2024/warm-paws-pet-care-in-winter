@@ -3,10 +3,12 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../context/AuthContext/AuthContext';
 import toast from 'react-hot-toast';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
+import { updateProfile } from 'firebase/auth';
+import { auth } from '../../firebase/firebase.config';
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const { createUser } = use(AuthContext);
+    const { createUser, setUser } = use(AuthContext);
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -15,6 +17,7 @@ const Register = () => {
         event.preventDefault()
         const name = event.target.name.value;
         const email = event.target.email.value;
+        const photoURL = event.target.photoURL.value;
         const password = event.target.password.value;
 
         const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
@@ -25,13 +28,19 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
+                updateProfile(auth.currentUser, {
+                    displayName: name, photoURL: photoURL,
+                }).then(() => {
+                    setUser(result.user)
+                }).catch(error => {
+                    console.log(error.message)
+                })
                 console.log(result.user);
+
                 toast.success('Account Registration successful');
                 setTimeout(() => {
                     navigate(location?.state || '/');
                 }, 1000);
-
-
             })
             .catch((error => {
                 console.log(error)
@@ -59,7 +68,7 @@ const Register = () => {
                                 <input name='name' type="text" className="input" required placeholder="Your Name" />
                                 {/* email */}
                                 <label className="label">Email</label>
-                                <input name='email' type="email" className="input" placeholder="Email" required/>
+                                <input name='email' type="email" className="input" placeholder="Email" required />
                                 {/* photoURL */}
                                 <label className="label">Your Photo </label>
                                 <input name='photoURL' type="text" className="input" placeholder="PhotoURL" />
@@ -71,7 +80,7 @@ const Register = () => {
                                             showPassword ? <IoMdEyeOff></IoMdEyeOff> : <IoMdEye></IoMdEye>
                                         }
                                     </button>
-                                    <input name='password' type={showPassword ? 'text' : "password"} className="input pr-10" placeholder="Password" required/>
+                                    <input name='password' type={showPassword ? 'text' : "password"} className="input pr-10" placeholder="Password" required />
                                 </div>
                                 <button className="btn btn-neutral mt-4">Register</button>
                                 {/* Google */}
