@@ -6,7 +6,7 @@ const ServiceCard = ({ service }) => {
     const { serviceId, serviceName, rating, price, image } = service;
 
     return (
-        <div className="card justify-center bg-base-100 md:max-w-76 shadow-md hover:shadow-xl transition flex-1">
+        <div data-aos="flip-right" className="card justify-center bg-base-100 md:max-w-76 shadow-md hover:shadow-xl transition flex-1">
             <figure className="px-4 pt-10">
                 <img
                     src={image}
