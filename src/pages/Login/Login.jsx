@@ -15,11 +15,9 @@ const Login = () => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
-        console.log(email, password);
 
         signInUser(email, password)
-            .then(result => {
-                console.log(result.user);
+            .then(() => {
                 event.target.reset();
                 toast.success('Login successful');
                 setTimeout(() => {
@@ -27,19 +25,22 @@ const Login = () => {
                 }, 1000);
             })
             .catch((error => {
-                console.log(error)
-                toast.error(error.message)
+                console.log(error);
+                toast.error(error.message);
             }))
     }
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
-            .then(result => {
-                console.log(result.user);
-                navigate(location?.state || '/')
+            .then(() => {
+                toast.success('Login successful');
+                setTimeout(() => {
+                    navigate(location?.state || '/');
+                }, 1000);
             })
             .catch((error => {
-                console.log(error)
+                console.log(error);
+                toast.error(error.message);
             }))
     }
 
@@ -70,7 +71,7 @@ const Login = () => {
                                             showPassword ? <IoMdEyeOff></IoMdEyeOff> : <IoMdEye></IoMdEye>
                                         }
                                     </button>
-                                        <input name='password' type={showPassword ? 'text' : "password"} className="input pr-10" placeholder="Password" required />
+                                    <input name='password' type={showPassword ? 'text' : "password"} className="input pr-10" placeholder="Password" required />
                                 </div>
                                 <div><a className="link link-hover">Forgot password?</a></div>
 

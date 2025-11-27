@@ -21,11 +21,13 @@ const Profile = () => {
         updateProfile(auth.currentUser, {
             displayName: name, photoURL: photoURL,
         }).then(() => {
-            setUser(auth.currentUser)
-            toast.success('Profile Updated')
-            setIsFormOpen(!isFormOpen)
+            setUser(auth.currentUser);
+            toast.success('Profile Updated');
+            setIsFormOpen(!isFormOpen);
+
         }).catch(error => {
-            console.log(error)
+            console.log(error);
+            toast.error(error.message);
         })
     }
 

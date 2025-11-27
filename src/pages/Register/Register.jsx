@@ -1,7 +1,7 @@
 import React, { use, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../context/AuthContext/AuthContext';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 import { updateProfile } from 'firebase/auth';
 import { auth } from '../../firebase/firebase.config';
@@ -20,9 +20,13 @@ const Register = () => {
         const photoURL = event.target.photoURL.value;
         const password = event.target.password.value;
 
-        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-        if (passwordPattern.test(password)) {
-            toast.error('Password must have uppercase, lowercase, and at least 6 characters');
+        const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/;
+        if (!passwordPattern.test(password)) {
+            toast.error("Password must contain at least one uppercase letter, one lowercase letter, one number, and be at least 6 characters long.");
+            return;
+        }
+        if (!name) {
+            toast.error("Please Enter Your Name");
             return;
         }
 
@@ -33,11 +37,12 @@ const Register = () => {
                 }).then(() => {
                     setUser(result.user)
                 }).catch(error => {
-                    console.log(error.message)
-                })
-                console.log(result.user);
+                    console.log(error)
+                    toast.error(error.message)
+                });
 
                 toast.success('Account Registration successful');
+
                 setTimeout(() => {
                     navigate(location?.state || '/');
                 }, 1000);
@@ -49,12 +54,16 @@ const Register = () => {
     }
     const handleGoogleSignUp = () => {
         signInWithGoogle()
-            .then(result => {
-                console.log(result.user);
-                navigate(location?.state || '/')
-            })
+            .then(() => {
+                toast.success('Account Registration successful');
+
+                setTimeout(() => {
+                    navigate(location?.state || '/');
+                }, 1000);
+                        })
             .catch((error => {
                 console.log(error)
+                toast.error(error.message);
             }))
     }
 
@@ -105,6 +114,7 @@ const Register = () => {
                     </div>
                 </div>
             </div>
+            <Toaster></Toaster>
         </div>
     );
 };

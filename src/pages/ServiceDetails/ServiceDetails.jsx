@@ -8,7 +8,7 @@ const ServiceDetails = () => {
     const { id } = useParams(); // {id: 'string'}
 
     const service = services.find(service => service.serviceId === parseInt(id))
-    console.log(service);
+    // console.log(service);
     const { category, description, image, price, providerEmail, providerName, rating, serviceName, slotsAvailable } = service;
     const totalStars = 5;
 

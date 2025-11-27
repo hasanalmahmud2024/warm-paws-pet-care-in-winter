@@ -2,6 +2,7 @@ import React, { use } from 'react';
 import { FaShieldDog } from 'react-icons/fa6';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../context/AuthContext/AuthContext';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Navbar = () => {
     const { user, signOutUser } = use(AuthContext);
@@ -10,9 +11,11 @@ const Navbar = () => {
         signOutUser()
             .then(() => {
                 console.log('Signed out');
+                toast.success("Signed Out")
             })
             .catch(error => {
                 console.log(error.message);
+                toast.error(error.message);
             })
     }
 
@@ -48,6 +51,7 @@ const Navbar = () => {
                         : <Link className='btn' to={'/login'}>Log In</Link>
                 }
             </div>
+            <Toaster></Toaster>
         </div>
     );
 };
