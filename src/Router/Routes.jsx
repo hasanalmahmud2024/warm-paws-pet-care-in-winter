@@ -8,6 +8,7 @@ import Error from "../components/Error/Error";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import ResetPassword from "../pages/ResetPassword/ResetPassword";
 
 
 const router = createBrowserRouter([
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 Component: Register,
+            },
+            {
+                path: '/reset-password',
+                Component: ResetPassword,
             }
         ]
     },

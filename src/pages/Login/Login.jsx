@@ -73,7 +73,7 @@ const Login = () => {
                                     </button>
                                     <input name='password' type={showPassword ? 'text' : "password"} className="input pr-10" placeholder="Password" required />
                                 </div>
-                                <div><a className="link link-hover">Forgot password?</a></div>
+                                <div><Link to={'/reset-password'} className="link link-hover hover:text-blue-400">Forgot password?</Link></div>
 
                                 <button className="btn btn-neutral mt-4">Login</button>
                                 <button onClick={handleGoogleSignIn} className="btn bg-white text-black my-1">

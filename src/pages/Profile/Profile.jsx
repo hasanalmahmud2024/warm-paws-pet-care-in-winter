@@ -55,7 +55,7 @@ const Profile = () => {
                                 <label className="label">Your Photo </label>
                                 <input name='photoURL' defaultValue={user?.photoURL} type="text" className="input" placeholder="PhotoURL" />
 
-                                <button className="btn btn-neutral mt-4">Update</button>
+                                <button className="btn btn-primary mt-4">Update</button>
                             </fieldset>
                         </form>) : 
                         <button onClick={handleOpenForm} className="btn btn-primary">Update Profile</button>
