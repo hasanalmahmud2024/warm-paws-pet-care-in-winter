@@ -50,7 +50,7 @@ const Navbar = () => {
                     <div className="flex items-center gap-4">
                         <Link to={'/profile'} className="relative group cursor-pointer">
                             <img
-                                src={user?.photoURL || "https://i.ibb.co/ZVFsg37/default-avatar.png"}
+                                src={user?.photoURL || "https://imgs.search.brave.com/CyAW1TV_1bpb3aJjutbaoji2RjmSM6pn2sNL1R6n7e8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAyMy8w/Mi8xOC8xMS8wMC9p/Y29uLTc3OTc3MDRf/NjQwLnBuZw"}
                                 className="w-10 h-10 rounded-full object-cover border hover:border-2" 
                                 />
                             <span className="absolute left-1/2 -translate-x-1/2 mt-2 px-5 py-1 rounded bg-neutral text-white text-sm opacity-0 group-hover:opacity-100 transition z-50">

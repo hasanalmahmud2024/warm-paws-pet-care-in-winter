@@ -37,7 +37,7 @@ const Profile = () => {
             <div className="hero-content flex-col text-center ">
                 <div className="avatar">
                     <div className="w-36 rounded-full">
-                        <img src={user?.photoURL} />
+                        <img src={user?.photoURL || "https://imgs.search.brave.com/CyAW1TV_1bpb3aJjutbaoji2RjmSM6pn2sNL1R6n7e8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAyMy8w/Mi8xOC8xMS8wMC9p/Y29uLTc3OTc3MDRf/NjQwLnBuZw"} />
                     </div>
                 </div>
                 <div>
