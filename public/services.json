@@ -1,17 +1,5 @@
 [
   {
-    "serviceId": 2,
-    "serviceName": "Winter Grooming & De-Matting",
-    "providerName": "FurryFriends Grooming",
-    "providerEmail": "grooming@furryfriends.com",
-    "price": 40,
-    "rating": 4.8,
-    "slotsAvailable": 3,
-    "description": "Specialized grooming for thick winter coats, focusing on detangling, de-matting, and skin hydration to prevent dryness and irritation. Uses premium hydrating products to keep your pet's coat and skin in top condition during the cold months.",
-    "image": "https://cdn.shopify.com/s/files/1/0681/6618/9353/files/Summer_vs._Winter_Pet_Grooming__Key_Differences_Explained_3.png",
-    "category": "Grooming"
-  },
-  {
     "serviceId": 3,
     "serviceName": "Indoor Exercise & Play Sessions",
     "providerName": "PlayPaws Indoor Park",
@@ -22,18 +10,6 @@
     "description": "Supervised indoor play or one-on-one active sessions in heated facilities for pets unable to go outside during cold weather. Activities include interactive games, agility exercises, and mental stimulation to keep pets active and happy indoors.",
     "image": "https://outwardhound.com/furtropolis/wp-content/uploads/2020/01/oh-indoor-agility-1100X800-1024x745.jpg",
     "category": "Exercise & Play"
-  },
-  {
-    "serviceId": 4,
-    "serviceName": "Heated Pet Boarding or Daycare",
-    "providerName": "WarmWhiskers Boarding",
-    "providerEmail": "boarding@warmwhiskers.com",
-    "price": 35,
-    "rating": 4.9,
-    "slotsAvailable": 2,
-    "description": "Climate-controlled boarding with cozy bedding and wellness checks, ideal for holiday travelers and cold-sensitive pets. Ensures your pet stays warm, comfortable, and monitored for any signs of stress or health issues while you're away.",
-    "image": "https://raleighrealty.com/rr-images/uploads/blogs/1733502078057-561680793-Dog%20Daycare.png",
-    "category": "Boarding"
   },
   {
     "serviceId": 5,
@@ -60,16 +36,16 @@
     "category": "Health & Safety"
   },
   {
-    "serviceId": 1,
-    "serviceName": "Paw Protection Treatments",
-    "providerName": "SafePaws Clinic",
-    "providerEmail": "contact@safepaws.com",
-    "price": 20,
-    "rating": 4.7,
-    "slotsAvailable": 5,
-    "description": "Application of protective balms or wax to shield pets' paws from ice, salt, and cracking. Includes post-walk cleaning to remove debris and chemicals, ensuring your pet's paws stay healthy and safe during winter walks.",
-    "image": "https://cbddoghealth.com/wp-content/uploads/2023/11/winter-dog-paw-protection.jpg",
-    "category": "Health & Safety"
+    "serviceId": 4,
+    "serviceName": "Heated Pet Boarding or Daycare",
+    "providerName": "WarmWhiskers Boarding",
+    "providerEmail": "boarding@warmwhiskers.com",
+    "price": 35,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Climate-controlled boarding with cozy bedding and wellness checks, ideal for holiday travelers and cold-sensitive pets. Ensures your pet stays warm, comfortable, and monitored for any signs of stress or health issues while you're away.",
+    "image": "https://www.lovingcareanimalhospital.net/wp-content/uploads/2025/11/Winter-Care-Advice-for-Dogs-and-Cats.jpg",
+    "category": "Boarding"
   },
   {
     "serviceId": 7,
@@ -82,6 +58,18 @@
     "description": "Insulated, waterproof pet clothing with personalized sizing and style consultations for comfort and warmth. Ensures your pet's clothing fits comfortably and provides optimal warmth without restricting movement, with a variety of materials and designs to choose from.",
     "image": "https://m.media-amazon.com/images/I/61XDWm4yX1L.jpg",
     "category": "Clothing"
+  },
+  {
+    "serviceId": 1,
+    "serviceName": "Paw Protection Treatments",
+    "providerName": "SafePaws Clinic",
+    "providerEmail": "contact@safepaws.com",
+    "price": 20,
+    "rating": 4.7,
+    "slotsAvailable": 5,
+    "description": "Application of protective balms or wax to shield pets' paws from ice, salt, and cracking. Includes post-walk cleaning to remove debris and chemicals, ensuring your pet's paws stay healthy and safe during winter walks.",
+    "image": "https://cbddoghealth.com/wp-content/uploads/2023/11/winter-dog-paw-protection.jpg",
+    "category": "Health & Safety"
   },
   {
     "serviceId": 8,
@@ -106,6 +94,18 @@
     "description": "Clear walkways and yards using pet-safe de-icers and create designated potty paths for safe pet access. Minimizes the risk of slips, falls, or exposure to harmful chemicals, making outdoor time safer for your pet.",
     "image": "https://i5.walmartimages.com/seo/Pet-Safe-Ice-Melt-Eco-Friendly-Snow-Melter-for-Driveways-Sidewalks-Pet-Areas-Fast-Acting-Ice-Melter_d3de5cfe-cb69-4878-8da9-19f4e6f8a9ac.c665b5f7d396506f7bec18135371f35a.jpeg",
     "category": "Outdoor Services"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & De-Matting",
+    "providerName": "FurryFriends Grooming",
+    "providerEmail": "grooming@furryfriends.com",
+    "price": 40,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Specialized grooming for thick winter coats, focusing on detangling, de-matting, and skin hydration to prevent dryness and irritation. Uses premium hydrating products to keep your pet's coat and skin in top condition during the cold months.",
+    "image": "https://cdn.shopify.com/s/files/1/0681/6618/9353/files/Summer_vs._Winter_Pet_Grooming__Key_Differences_Explained_3.png",
+    "category": "Grooming"
   },
   {
     "serviceId": 10,
