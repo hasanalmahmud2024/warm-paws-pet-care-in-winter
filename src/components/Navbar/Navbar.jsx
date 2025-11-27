@@ -34,11 +34,11 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-6 w-52 p-3 shadow">
                         {links}
                     </ul>
                 </div>
-                <Link to={'/'} className="btn btn-ghost text-xl font-mono"><FaShieldDog /> WARM PAWS</Link>
+                <Link to={'/'} className="btn btn-ghost text-xl font-mono"><img src="/golden-retriever.png" className="w-10" alt="warm paws icon" /> WARM PAWS</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

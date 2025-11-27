@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-16">
+        <footer className="footer footer-horizontal footer-center bg-base-200 text-base-content rounded py-16">
             <nav className="grid grid-flow-col gap-4">
                 <a className="link link-hover">About us</a>
                 <a className="link link-hover">Contact</a>
@@ -47,7 +47,7 @@ const Footer = () => {
                 </div>
             </nav>
             <aside>
-                <p>Copyright © {new Date().getFullYear()} - All right reserved by- <span className='text-blue-50 font-bold font-mono'>WARM PAWS</span></p>
+                <p className='flex gap-1'>Copyright © {new Date().getFullYear()} - All right reserved by- <span className=' text-blue-50 font-bold font-mono'> WARM PAWS</span><img src="/golden-retriever.png" className="w-4 h-4" alt="warm paws icon" /></p>
             </aside>
         </footer>
     );
