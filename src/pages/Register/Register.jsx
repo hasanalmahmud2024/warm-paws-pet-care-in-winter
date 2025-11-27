@@ -73,7 +73,7 @@ const Register = () => {
     }
 
     return (
-        <div className="hero bg-base-200 pt-10">
+        <div className="hero bg-base-200 py-10">
             <title>WARM PAWS | Sign Up</title>
             <div className="hero-content flex-col ">
                 <div className="text-center lg:text-left mb-2">

@@ -28,8 +28,8 @@ const ResetPassword = () => {
     }
 
     return (
-        <div className='min-h-[80vh] grid justify-center items-center py-8'>
-            <div className="max-w-md mx-auto p-10 shadow-lg bg-neutral-300 rounded-lg ">
+        <div className='min-h-[60vh] grid justify-center items-center py-12 px-8'>
+            <div className="max-w-md mx-auto p-10 shadow-lg bg-neutral-300 rounded-lg mb-8">
                 <h2 className="text-3xl font-black mb-10 text-center text-black">Reset Password</h2>
 
                 <label className="label">
@@ -47,7 +47,9 @@ const ResetPassword = () => {
                     Send Reset Email
                 </button>
             </div>
-            <Link to={'/login'} className='btn btn-ghost btn-soft text-white'>Back to Login</Link>
+            <div className='text-center '>
+                <Link to={'/login'} className='btn btn-ghost btn-soft text-white w-full'>Back to Login</Link>
+            </div>
             <Toaster></Toaster>
         </div>
     );

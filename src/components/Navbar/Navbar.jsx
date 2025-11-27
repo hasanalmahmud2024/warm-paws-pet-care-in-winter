@@ -14,7 +14,7 @@ const Navbar = () => {
                 console.log('Signed out');
             })
             .catch(error => {
-                console.log(error.message);
+                console.log(error);
                 toast.error(error.message);
             })
     }
