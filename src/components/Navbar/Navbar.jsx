@@ -6,12 +6,14 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const Navbar = () => {
     const { user, signOutUser } = use(AuthContext);
+    console.log(user);
+
 
     const handleSignOut = () => {
         signOutUser()
             .then(() => {
-                console.log('Signed out');
                 toast.success("Signed Out")
+                console.log('Signed out');
             })
             .catch(error => {
                 console.log(error.message);
@@ -38,7 +40,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl font-mono"><FaShieldDog /> WARM PAWS</a>
+                <Link to={'/'} className="btn btn-ghost text-xl font-mono"><FaShieldDog /> WARM PAWS</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -46,9 +48,22 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {
-                    user ? <button onClick={handleSignOut} className="btn">Log Out</button>
-                        : <Link className='btn' to={'/login'}>Log In</Link>
+                {user ? (
+                    <div className="flex items-center gap-4">
+                        <Link to={'/profile'} className="relative group cursor-pointer">
+                            <img
+                                src={user?.photoURL || "https://i.ibb.co/ZVFsg37/default-avatar.png"}
+                                className="w-10 h-10 rounded-full object-cover border hover:border-2" 
+                                />
+                            <span className="absolute left-1/2 -translate-x-1/2 mt-2 px-5 py-1 rounded bg-neutral text-white text-sm opacity-0 group-hover:opacity-100 transition z-50">
+                                {user?.displayName || "User"}
+                            </span>
+                        </Link>
+                        <button onClick={handleSignOut} className="btn">
+                            Logout
+                        </button>
+                    </div>)
+                    : <Link className='btn' to={'/login'}>Log In</Link>
                 }
             </div>
             <Toaster></Toaster>
